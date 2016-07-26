@@ -15,15 +15,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 0;
 }
 .header-right {
   height: inherit;
   display: flex;
   align-items: center;
-}
-
-.header-right .button {
-  margin-left: 10px;
+  padding: 0 20px;
 }
 
 .button {
@@ -46,6 +47,9 @@ header {
   background: #ff4842;
   /*border-color: yellow;*/
 }
+.button.red:hover{
+  background: #7dcd40;
+}
 
 .button.green {
   background: #7dcd40;
@@ -57,6 +61,7 @@ nav {
   /*float: right;*/
   /*position: absolute;*/
   /*right: 0;*/
+  margin-right: 10px;
   height: inherit;
 }
 nav ul {
@@ -115,7 +120,9 @@ h1 {
   position: relative;
   margin-bottom: 20px;
 }
-
+.portada .portada-img{
+  width: 100%;
+}
 .portada .description {
   background: rgba(255, 255, 255, .8);
   position: absolute;
@@ -126,7 +133,7 @@ h1 {
 
 .blog {
   width: 1000px;
-  margin: 0 auto;
+  margin: 70px auto;
 }
 
 
@@ -202,4 +209,90 @@ h1 {
 
 .autor p {
   margin: 0;
+}
+/*Icono*/
+.btn-menu{
+  font-size: 20px;
+  color: #FFF;
+  padding: 10px;
+  display: none;
+  cursor: pointer;
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+  .blog{
+    width: 90%;
+  }
+  .blog-items{
+    justify-content: space-around;
+  }
+  .item-blog{
+    width: 400px;
+  }
+  .item-blog .portada-img{
+    width: 100%;    
+  }
+  .btn-menu{
+    display: block;
+  }  
+  .nav{    
+    height: 0;
+    background: #32352e;
+    position: fixed;
+    left: 0;
+    top: 50px;    
+    right: 0;
+    z-index: 2;         
+    transition: 0.5s;
+    opacity: 0; 
+    margin-right: 0;   
+    }
+  .nav-active{    
+    height: 250px;
+    opacity:1;
+  }
+  .nav ul{    
+    height: 100%;
+    flex-direction: column;
+    padding: 0 20px;    
+  }
+  .nav li{
+    width: 100%;  
+
+  }
+  .nav li a{
+    width: inherit;
+    justify-content: center;
+  }
+  nav li:after{
+    display: none;
+  }
+  
+  
+}
+@media screen and (max-width: 600px) {
+  .paginador{
+    flex-direction: column;
+    
+  }
+  .paginador span{
+    margin-bottom: 10px;
+  }
+  .paginador ul{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+  }
+  .paginador ul li{
+    margin-top: 5px;
+  }
+}
+@media screen and(max-width: 276px){
+  .button.red {
+    margin-left: 0;
+  }
 }
