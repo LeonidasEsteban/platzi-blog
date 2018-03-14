@@ -198,6 +198,7 @@ h1 {
   border-radius: 50%;
   vertical-align: middle;
   margin-right: 5px;
+  object-fit: cover;
 }
 
 .autor p {
